@@ -59,11 +59,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         String selection = Username_COL + "=?" + " AND " + Password_COL + "=?";
         String[] selectionArgs = {username, password};
 
-        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
+        int count = cursor.getCount();
         cursor.close();
         db.close();
 
-        if (cursor.getCount() > 0) {
+
+        if (count > 0) {
             return true;
         } else {
             return false;
