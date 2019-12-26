@@ -71,7 +71,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#9e3f71"
-        android:text="Login"
+        android:text="Register"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
