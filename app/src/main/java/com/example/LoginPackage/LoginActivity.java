@@ -1,4 +1,4 @@
-package com.example.loginactivity;
+package com.example.LoginPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,22 +10,22 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.Database.DataBaseHelper;
-import com.example.HomeActivity.HomeActivity;
+import com.example.LoginPackage.Database.AccountDataBaseHelper;
+import com.example.SongPackage.SongActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText mTextUsername;
     EditText mTextPassword;
     Button mButtonLogin;
     TextView mTextViewRegister;
-    DataBaseHelper database;
+    AccountDataBaseHelper database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        database = new DataBaseHelper(this);
+        database = new AccountDataBaseHelper(this);
         mTextUsername = findViewById(R.id.username_editText_main);
         mTextPassword = findViewById(R.id.password_editText_main);
         mButtonLogin = findViewById(R.id.login_button_main);
@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 boolean result = database.checkUser(username, password);
                 if (result == true) {
-                    Intent movetoHomeActivity = new Intent(LoginActivity.this, HomeActivity.class);
+                    Intent movetoHomeActivity = new Intent(LoginActivity.this, SongActivity.class);
                     startActivity(movetoHomeActivity);
                     Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
                 } else

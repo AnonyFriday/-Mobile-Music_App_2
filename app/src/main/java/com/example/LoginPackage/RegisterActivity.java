@@ -1,4 +1,4 @@
-package com.example.loginactivity;
+package com.example.LoginPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.Database.DataBaseHelper;
+import com.example.LoginPackage.Database.AccountDataBaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mTextConfirmPassword;
     Button mButtonRegister;
     TextView mTextViewLogin;
-    DataBaseHelper database;
+    AccountDataBaseHelper database;
 
 
     @Override
@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         mTextConfirmPassword = findViewById(R.id.confirmPassword_editText_register);
         mButtonRegister = findViewById(R.id.register_button_register);
         mTextViewLogin = findViewById(R.id.login_textView_register);
-        database = new DataBaseHelper(this);
+        database = new AccountDataBaseHelper(this);
 
         mTextViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override

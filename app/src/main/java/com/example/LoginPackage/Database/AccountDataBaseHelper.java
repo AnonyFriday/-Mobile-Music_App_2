@@ -1,4 +1,4 @@
-package com.example.Database;
+package com.example.LoginPackage.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DataBaseHelper extends SQLiteOpenHelper {
+public class AccountDataBaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "register.db";
     public static final String TABLE_NAME = "Account";
@@ -25,7 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
 
-    public DataBaseHelper(@Nullable Context context) {
+    public AccountDataBaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
