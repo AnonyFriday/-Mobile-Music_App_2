@@ -17,31 +17,19 @@ import java.util.List;
 
 public class SongActivity extends AppCompatActivity {
 
-    SongDataBaseHelper songDatabase;
     SongRecyclerViewAdapter songAdapter;
-    List<Song> listSong;
+    RecyclerView songRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
 
+        songRecyclerView = findViewById(R.id.songRecyclerView_recycleview_song);
+        songRecyclerView.setLayoutManager(new LinearLayoutManager(SongActivity.this));
 
-
-
-        RecyclerView songRecyclerView = findViewById(R.id.songRecyclerView_recycleview_song);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        songRecyclerView.setLayoutManager(linearLayoutManager);
-
-        songDatabase = new SongDataBaseHelper(this);
-        listSong = songDatabase.getSongs(); //arraylist
-
-        songAdapter = new SongRecyclerViewAdapter(listSong,this);
-
+        songAdapter = new SongRecyclerViewAdapter(new SongDataBaseHelper(this).getSongs(),this);
         songRecyclerView.setAdapter(songAdapter);
-
 
     }
 }

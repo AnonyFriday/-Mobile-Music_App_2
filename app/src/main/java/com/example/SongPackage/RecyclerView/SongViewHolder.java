@@ -22,9 +22,5 @@ public class SongViewHolder extends RecyclerView.ViewHolder {
         songNameTextView = itemView.findViewById(R.id.songName_textView_song);
     }
 
-    public void updateSong(Song song)
-    {
-        this.songImageView.setImageResource(R.drawable.ic_launcher_background);
-        this.songNameTextView.setText("Hello");
-    }
+
 }

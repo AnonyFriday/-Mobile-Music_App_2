@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.LoginPackage.R;
 import com.example.SongPackage.Entity.Song;
 
 import java.util.ArrayList;
@@ -25,11 +26,11 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
     private static final String COL_IMAGE = "IMAGE";
     //private static final String COL_LINK = "LINK";
 
-    private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_NAME + " TEXT NOT NULL,"
             + COL_IMAGE + " TEXT NOT NULL" + ")";
 
-    private static final String DROP_TABLE = "DROP TABLE " + TABLE_NAME;
+    private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     private static final String GET_ALL_STATEMENT = "SELECT * FROM " + TABLE_NAME;
 
 
@@ -50,29 +51,25 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
 
 
     /* @return  a list of all monster from the database table called monster */
-    public Cursor getAll()
-    {
+    public Cursor getAll() {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery(GET_ALL_STATEMENT,null);
+        return db.rawQuery(GET_ALL_STATEMENT, null);
     }
 
     public List<Song> getSongs() {
         List<Song> listSong = new ArrayList<>();
 
-        Cursor cursor = getAll();
+        Song song = new Song();
+        song.setName("Song_1");
+        song.setImageFileName(R.drawable.song_1);
+        listSong.add(song);
 
-        if (cursor.getCount() > 0) {
-            Song song;
-            while (cursor.moveToNext()) {
-                Long id = cursor.getLong(0);
-                String name = cursor.getString(1);
-                String imageFileName = cursor.getString(2);
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
 
-                song = new Song(id, name, imageFileName);
-                listSong.add(song);
-            }
-        }
-        cursor.close();
+
         return listSong;
     }
 }

@@ -14,6 +14,7 @@ import com.example.LoginPackage.R;
 import com.example.SongPackage.Entity.Song;
 
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder> {
 
@@ -29,10 +30,7 @@ public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder
     @Override
     public SongViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view;
-        LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.recycler_song_view,parent,false);
-
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_song_view,null);
         return new SongViewHolder(view);
 
     }
@@ -41,6 +39,7 @@ public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder
     public void onBindViewHolder(@NonNull SongViewHolder songViewHolderholder, int position) {
 
         songViewHolderholder.songNameTextView.setText(mSongs.get(position).getName());
+        songViewHolderholder.songImageView.setImageResource(mSongs.get(position).getImageFileName());
     }
 
     @Override
