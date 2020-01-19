@@ -56,12 +56,57 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
         return db.rawQuery(GET_ALL_STATEMENT, null);
     }
 
-    public List<Song> getSongs() {
-        List<Song> listSong = new ArrayList<>();
+    public ArrayList<Song> getSongs() {
+        ArrayList<Song> listSong = new ArrayList<>();
 
         Song song = new Song();
         song.setName("Song_1");
         song.setImageFileName(R.drawable.song_1);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
         listSong.add(song);
 
         song = new Song();

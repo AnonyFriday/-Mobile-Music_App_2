@@ -20,10 +20,13 @@ public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder
 
     private List<Song> mSongs;
     private Context mContext;
+    private OnSongListener mOnSongListener;
 
-    public SongRecyclerViewAdapter(List<Song> songs, Context context) {
+    //TODO add the OnSongListener data type
+    public SongRecyclerViewAdapter(List<Song> songs, Context context, OnSongListener onSongListener) {
         mSongs = songs;
         mContext = context;
+        this.mOnSongListener = onSongListener;
     }
 
     @NonNull
@@ -31,7 +34,7 @@ public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder
     public SongViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_song_view,null);
-        return new SongViewHolder(view);
+        return new SongViewHolder(view,mOnSongListener);
 
     }
 
@@ -45,5 +48,10 @@ public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder
     @Override
     public int getItemCount() {
         return mSongs.size();
+    }
+
+    //to create the click for each element
+    public interface OnSongListener{
+        void onSongClick(int position);
     }
 }

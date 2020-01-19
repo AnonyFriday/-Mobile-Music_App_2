@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.HomeActivity.playSongFunction"></activity>
-        <activity android:name="com.example.SongPackage.SongActivity" />
+        <activity android:name="com.example.MainActivity.MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
