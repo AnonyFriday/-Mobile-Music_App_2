@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
-import com.example.AlbumPackage.AlbumFragment;
+import com.example.SettingActivity.SettingFragment;
 import com.example.LoginPackage.R;
+import com.example.SettingActivity.SettingFragment;
 import com.example.SingerPackage.SingerFragment;
 import com.example.SongPackage.Database.SongDataBaseHelper;
 import com.example.SongPackage.RecyclerView.SongRecyclerViewAdapter;
@@ -23,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView mBottomNavigationView;
     static SingerFragment singerFragment;
     static SongFragment songFragment;
-    static AlbumFragment albumFragment;
-
-
-
+    static SettingFragment settingFragment;
+    ImageView userImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        userImageView = findViewById(R.id.user_ImageView_main);
 
         songFragment = new SongFragment();
         this.getSupportFragmentManager()
@@ -65,12 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
                         return true;
                     }
-                    case R.id.navigation_albums:
+                    case R.id.navigation_setting:
                     {
-                        albumFragment = new AlbumFragment();
+                        settingFragment = new SettingFragment();
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.frameLayoutContainer,albumFragment)
+                                .replace(R.id.frameLayoutContainer,settingFragment)
                                 .commit();
 
                         return true;

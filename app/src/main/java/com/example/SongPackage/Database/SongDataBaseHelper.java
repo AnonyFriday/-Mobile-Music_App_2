@@ -114,6 +114,51 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
         song.setImageFileName(R.drawable.song_2);
         listSong.add(song);
 
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
+        song = new Song();
+        song.setName("Song_2");
+        song.setImageFileName(R.drawable.song_2);
+        listSong.add(song);
+
 
         return listSong;
     }

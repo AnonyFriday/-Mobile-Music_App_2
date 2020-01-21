@@ -13,17 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.LoginPackage.R;
 import com.example.SongPackage.Entity.Song;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
 public class SongRecyclerViewAdapter extends RecyclerView.Adapter<SongViewHolder> {
 
-    private List<Song> mSongs;
+    private ArrayList<Song> mSongs;
     private Context mContext;
     private OnSongListener mOnSongListener;
 
     //TODO add the OnSongListener data type
-    public SongRecyclerViewAdapter(List<Song> songs, Context context, OnSongListener onSongListener) {
+    public SongRecyclerViewAdapter(ArrayList<Song> songs, Context context, OnSongListener onSongListener) {
         mSongs = songs;
         mContext = context;
         this.mOnSongListener = onSongListener;

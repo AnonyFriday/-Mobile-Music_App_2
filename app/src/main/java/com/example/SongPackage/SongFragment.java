@@ -12,10 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.HomeActivity.playSongFunction;
+import com.example.PlaySongActivity.playSongFunction;
 import com.example.LoginPackage.R;
 import com.example.SongPackage.Database.SongDataBaseHelper;
-import com.example.SongPackage.Entity.Song;
 import com.example.SongPackage.RecyclerView.SongRecyclerViewAdapter;
 
 
@@ -28,8 +27,7 @@ public class SongFragment extends Fragment implements SongRecyclerViewAdapter.On
 
     SongRecyclerViewAdapter songAdapter;
     RecyclerView songRecyclerView;
-    SongDataBaseHelper mSongDataBaseHelper;
-    Song song;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +40,6 @@ public class SongFragment extends Fragment implements SongRecyclerViewAdapter.On
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_song, container, false);
-
         //recycler View
         songRecyclerView = view.findViewById(R.id.recyclerView_SongActivity);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1, GridLayoutManager.VERTICAL, false);

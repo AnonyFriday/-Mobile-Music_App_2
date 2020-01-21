@@ -1,0 +1,45 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.SettingActivity.SettingFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="800dp"
+            android:background="#55000000">
+
+
+            <Button
+                android:id="@+id/rate_Button_settting"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="48dp"
+                android:background="@color/cardview_light_background"
+                android:text="Rate Us"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logout_Button_setting" />
+
+            <Button
+                android:id="@+id/logout_Button_setting"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="112dp"
+                android:background="@color/cardview_light_background"
+                android:text="Log out"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></Button>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

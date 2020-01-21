@@ -1,113 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.HomeActivity.playSongFunction">
+    android:background="@drawable/gradient_background"
+    android:backgroundTint="@color/colorAccent"
+    android:backgroundTintMode="multiply"
+    tools:context="com.example.PlaySongActivity.playSongFunction">
 
-    <ImageView
-        android:id="@+id/songImage_imageView_songPlay"
-        android:layout_width="141dp"
-        android:layout_height="146dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/image_user"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/songImage_imageView_songPlay">
+        android:layout_height="match_parent"
+        android:minHeight="800dp">
 
-        <SeekBar
-            android:id="@+id/remainingTime_SeekBar_playSong"
-            android:layout_width="300dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="42dp"
-            tools:layout_editor_absoluteY="281dp" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03">
 
+        </androidx.constraintlayout.widget.Guideline>
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <TextView
-            android:id="@+id/elapsedTimeLabel_TextView_playSong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1:5"
-            android:textColor="#699ECC">
-
-        </TextView>
-        
-        <TextView
-            android:layout_width="220dp"
-            android:layout_height="match_parent"></TextView>
-
-        <TextView
-            android:id="@+id/remainingTimeLabel_TextView_playSong"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-0:12"
-            android:textColor="#699ECC">
-
-        </TextView>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/playButton_Button_playSong"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/play_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playButton_Button_playSong">
+        </androidx.constraintlayout.widget.Guideline>
 
         <ImageView
-
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/sound">
-
-        </ImageView>
-
-        <SeekBar
-            android:id="@+id/volumnSeekBar_playSong"
+            android:id="@+id/songImage_imageView_songPlay"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"></SeekBar>
+            android:layout_height="300dp"
+            android:layout_marginTop="72dp"
+            android:background="@drawable/image_user"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/sound"></ImageView>
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/songImage_imageView_songPlay">
+
+            <SeekBar
+                android:id="@+id/remainingTime_SeekBar_playSong"
+                android:layout_width="300dp"
+                android:layout_height="34dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/elapsedTimeLabel_TextView_playSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1:5"
+                android:textColor="#699ECC">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="match_parent"></TextView>
+
+            <TextView
+                android:id="@+id/remainingTimeLabel_TextView_playSong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-0:12"
+                android:textColor="#699ECC">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/playButton_Button_playSong"
+            android:layout_width="60dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/play_button"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/playButton_Button_playSong">
+
+            <ImageView
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/sound">
+
+            </ImageView>
+
+            <SeekBar
+                android:id="@+id/volumnSeekBar_playSong"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"></SeekBar>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/sound"></ImageView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+
+
