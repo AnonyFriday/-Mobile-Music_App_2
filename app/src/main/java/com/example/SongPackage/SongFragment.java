@@ -56,6 +56,7 @@ public class SongFragment extends Fragment implements SongRecyclerViewAdapter.On
         Log.d("Clicked","Element has been clicked");
 
         Intent intent = new Intent(getActivity(), playSongFunction.class);
+
        // intent.putExtra("Name", mSongDataBaseHelper.getSongs().get(position));
         startActivity(intent);
     }

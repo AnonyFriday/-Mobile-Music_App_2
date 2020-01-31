@@ -24,11 +24,13 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
     private static final String COL_ID = "ID";
     private static final String COL_NAME = "NAME";
     private static final String COL_IMAGE = "IMAGE";
-    //private static final String COL_LINK = "LINK";
+    private static final String COL_LINK = "LINK";
 
-    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
+            + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_NAME + " TEXT NOT NULL,"
-            + COL_IMAGE + " TEXT NOT NULL" + ")";
+            + COL_IMAGE + " TEXT NOT NULL,"
+            + COL_LINK + " TEXT NOT NULL" + ")";
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     private static final String GET_ALL_STATEMENT = "SELECT * FROM " + TABLE_NAME;
@@ -49,7 +51,6 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
     /* @return  a list of all monster from the database table called monster */
     public Cursor getAll() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -61,104 +62,51 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
 
         Song song = new Song();
         song.setName("Song_1");
-        song.setImageFileName(R.drawable.song_1);
+        song.setImageFileName("https://i.picsum.photos/id/1/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setImageFileName("https://i.picsum.photos/id/2/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3");
         listSong.add(song);
 
         song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setName("Song_3");
+        song.setImageFileName("https://i.picsum.photos/id/3/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3");
         listSong.add(song);
 
         song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setName("Song_4");
+        song.setImageFileName("https://i.picsum.photos/id/4/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3");
         listSong.add(song);
 
         song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setName("Song_5");
+        song.setImageFileName("https://i.picsum.photos/id/5/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3");
         listSong.add(song);
 
         song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setName("Song_6");
+        song.setImageFileName("https://i.picsum.photos/id/6/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3");
         listSong.add(song);
 
         song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setName("Song_7");
+        song.setImageFileName("https://i.picsum.photos/id/7/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3");
         listSong.add(song);
 
         song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
+        song.setName("Song_8");
+        song.setImageFileName("https://i.picsum.photos/id/8/512/512.jpg");
+        song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3");
         listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
-        song = new Song();
-        song.setName("Song_2");
-        song.setImageFileName(R.drawable.song_2);
-        listSong.add(song);
-
 
         return listSong;
     }

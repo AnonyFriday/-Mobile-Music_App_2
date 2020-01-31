@@ -4,8 +4,12 @@ import java.io.Serializable;
 
 public class Song implements Serializable {
     private String name;
-    private int imageFileName;
-    // public static String SONG_KEY = "Song";
+    private String songFile;
+    private String imageFileName;
+
+    public static String SONG_KEY = "Song";
+
+    public Song(){}
 
     public String getName() {
         return name;
@@ -15,11 +19,19 @@ public class Song implements Serializable {
         this.name = name;
     }
 
-    public int getImageFileName() {
+    public String getSongFile() {
+        return songFile;
+    }
+
+    public void setSongFile(String songFile) {
+        this.songFile = songFile;
+    }
+
+    public String getImageFileName() {
         return imageFileName;
     }
 
-    public void setImageFileName(int imageFileName) {
+    public void setImageFileName(String imageFileName) {
         this.imageFileName = imageFileName;
     }
 }
