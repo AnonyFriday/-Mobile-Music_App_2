@@ -11,6 +11,7 @@ public class Song implements Serializable {
 
     public Song(){}
 
+    //Name
     public String getName() {
         return name;
     }
@@ -19,6 +20,8 @@ public class Song implements Serializable {
         this.name = name;
     }
 
+
+    //Song File
     public String getSongFile() {
         return songFile;
     }
@@ -27,6 +30,8 @@ public class Song implements Serializable {
         this.songFile = songFile;
     }
 
+
+    //Image File
     public String getImageFileName() {
         return imageFileName;
     }

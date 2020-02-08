@@ -46,7 +46,11 @@ public class SingerRecyclerViewAdapter extends RecyclerView.Adapter<SingerViewHo
     public void onBindViewHolder(@NonNull SingerViewHolder singerViewHolder, int position) {
 
         singerViewHolder.singerTextView.setText(mSingerArrayList.get(position).getName());
-        singerViewHolder.singerImageView.setImageResource(mSingerArrayList.get(position).getImageFileName());
+
+        final Singer singer = mSingerArrayList.get(position);
+        Picasso.get()
+                .load(singer.getImageFileName())
+                .into(singerViewHolder.singerImageView);
     }
 
     @Override

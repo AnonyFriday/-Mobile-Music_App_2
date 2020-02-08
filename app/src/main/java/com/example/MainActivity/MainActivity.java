@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.example.SettingActivity.RatingbarFragment;
 import com.example.SettingActivity.SettingFragment;
 import com.example.LoginPackage.R;
 import com.example.SettingActivity.SettingFragment;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     static SingerFragment singerFragment;
     static SongFragment songFragment;
     static SettingFragment settingFragment;
+
     ImageView userImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                                 .beginTransaction()
                                 .replace(R.id.frameLayoutContainer,settingFragment)
                                 .commit();
+
+
 
                         return true;
                     }

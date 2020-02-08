@@ -11,7 +11,6 @@ import com.example.LoginPackage.R;
 import com.example.SongPackage.Entity.Song;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SongDataBaseHelper extends SQLiteOpenHelper {
 
@@ -62,51 +61,52 @@ public class SongDataBaseHelper extends SQLiteOpenHelper {
 
         Song song = new Song();
         song.setName("Song_1");
-        song.setImageFileName("https://i.picsum.photos/id/1/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/1/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_2");
-        song.setImageFileName("https://i.picsum.photos/id/2/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/2/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_3");
-        song.setImageFileName("https://i.picsum.photos/id/3/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/3/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_4");
-        song.setImageFileName("https://i.picsum.photos/id/4/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/4/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_5");
-        song.setImageFileName("https://i.picsum.photos/id/5/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/5/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_6");
-        song.setImageFileName("https://i.picsum.photos/id/6/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/6/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_7");
-        song.setImageFileName("https://i.picsum.photos/id/7/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/7/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3");
         listSong.add(song);
 
         song = new Song();
         song.setName("Song_8");
-        song.setImageFileName("https://i.picsum.photos/id/8/512/512.jpg");
+        song.setImageFileName("https://i.picsum.photos/id/8/32/32.jpg");
         song.setSongFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3");
         listSong.add(song);
+
 
         return listSong;
     }

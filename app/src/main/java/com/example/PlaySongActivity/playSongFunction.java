@@ -1,5 +1,6 @@
 package com.example.PlaySongActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,9 +12,15 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.ConstantKey.ActitiviyConstantKey;
 import com.example.LoginPackage.R;
+import com.example.SingerPackage.Entity.Singer;
+import com.example.SongPackage.Entity.Song;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
@@ -43,13 +50,35 @@ public class playSongFunction extends AppCompatActivity {
     }
 
     private void initMediaPlayer() throws IOException {
-        myMediaPlayer = new MediaPlayer();
-        myUri = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3";
-        //myMediaPlayer = MediaPlayer.create(this, R.raw.song_1);
-        myMediaPlayer.setDataSource(myUri);
+
+        Intent intentThatCalled = getIntent();
+
+        if(intentThatCalled.hasExtra(Song.SONG_KEY))
+        {
+            Song song = (Song) intentThatCalled.getSerializableExtra(Song.SONG_KEY);
+            Picasso.get()
+                    .load(song.getImageFileName())
+                    .into(choosedSongImageView);
+            //choosedSongImageView.setImageURI(Uri.parse(song.getImageFileName()));
+            myMediaPlayer = new MediaPlayer();
+            // if (song != null) {
+            //       myUri = song.getSongFile();
+            //
+            //myMediaPlayer = MediaPlayer.create(this, R.raw.song_1);
+            myMediaPlayer.setDataSource(song.getSongFile());//"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        }else
+        {
+            Singer singer = (Singer) intentThatCalled.getSerializableExtra(Singer.SINGER_KEY);
+            Picasso.get()
+                    .load(singer.getImageFileName())
+                    .into(choosedSongImageView);
+
+            myMediaPlayer = new MediaPlayer();
+
+            myMediaPlayer.setDataSource(singer.getSingerFileSong());//"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        }
 
         myMediaPlayer.prepare();
-        myMediaPlayer.start();
         myMediaPlayer.setLooping(true);
         myMediaPlayer.seekTo(0);
         myMediaPlayer.setVolume(0.5f, 0.5f);
@@ -83,7 +112,7 @@ public class playSongFunction extends AppCompatActivity {
                     myMediaPlayer.start();
                     playButton.setBackgroundResource(R.drawable.stop_button);
                 } else {
-                    myMediaPlayer.stop();
+                    myMediaPlayer.pause();
                     playButton.setBackgroundResource(R.drawable.play_button);
                 }
 
@@ -167,7 +196,11 @@ public class playSongFunction extends AppCompatActivity {
         remainingTimeLabel = findViewById(R.id.remainingTimeLabel_TextView_playSong);
         positioningTimeSeekBar = findViewById(R.id.remainingTime_SeekBar_playSong);
         volumnSeekBar = findViewById(R.id.volumnSeekBar_playSong);
-
         choosedSongImageView = findViewById(R.id.songImage_imageView_songPlay);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

@@ -19,6 +19,7 @@ public class SongViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     public final ImageView songImageView;
     public final TextView songNameTextView;
+
     SongRecyclerViewAdapter.OnSongListener mOnSongListener;
 
     //TODO add the OnSongListener

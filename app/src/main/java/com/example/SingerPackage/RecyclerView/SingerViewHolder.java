@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.LoginPackage.R;
+import com.example.SingerPackage.Entity.Singer;
 import com.example.SongPackage.RecyclerView.SongRecyclerViewAdapter;
 
 public class SingerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

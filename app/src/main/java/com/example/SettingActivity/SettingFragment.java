@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import com.example.LoginPackage.LoginActivity;
 import com.example.LoginPackage.R;
 
+import hotchemi.android.rate.AppRate;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +32,7 @@ public class SettingFragment extends Fragment {
 
     Button logoutButton;
     Button rateButton;
+    static RatingbarFragment rattingFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,14 +63,11 @@ public class SettingFragment extends Fragment {
         rateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
-                    startActivity(new Intent(Intent.ACTION_SENDTO,
-                            Uri.parse("market://detail?id=" + PACKAGE_NAME)));
-                }catch (ActivityNotFoundException e)
-                {
-                    startActivity(new Intent(Intent.ACTION_SENDTO,
-                            Uri.parse("http://play.google.com/store/apps/details?id=" + PACKAGE_NAME)));
-                }
+                rattingFragment = new RatingbarFragment();
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayoutRatingBar,rattingFragment)
+                        .commit();
             }
         });
 
