@@ -201,6 +201,10 @@ public class playSongFunction extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        finish();
+        if(myMediaPlayer!=null)
+        {
+            myMediaPlayer.stop();
+            super.onBackPressed();
+        }
     }
 }

@@ -66,7 +66,7 @@ public class SettingFragment extends Fragment {
                 rattingFragment = new RatingbarFragment();
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.frameLayoutRatingBar,rattingFragment)
+                        .replace(R.id.frameLayoutContainer,rattingFragment)
                         .commit();
             }
         });

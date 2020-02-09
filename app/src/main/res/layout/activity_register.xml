@@ -18,6 +18,8 @@
         android:drawableLeft="@drawable/username"
         android:ems="10"
         android:hint="Username"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -29,7 +31,9 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="#F5F2FF"
+        android:background="#FFFFFF"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
         android:drawableLeft="@drawable/password"
         android:ems="10"
         android:hint="Password"
@@ -44,6 +48,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#F5F2FF"
+        android:textColorHint="#000000"
+        android:textColor="#000000"
         android:drawableLeft="@drawable/password"
         android:ems="10"
         android:hint="Confirm Password
@@ -58,12 +64,12 @@
         android:id="@+id/icon_imageView_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/logo_brand" />
 
     <Button
         android:id="@+id/register_button_register"
@@ -102,7 +108,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:text="LOGIN"
-            android:textColor="#11FFCE"
+            android:textColor="@color/cardview_light_background"
             android:textSize="16sp"
             android:textStyle="bold"></TextView>
 

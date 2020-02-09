@@ -1,6 +1,7 @@
 package com.example.SettingActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.LoginPackage.R;
+import com.example.MainActivity.MainActivity;
 
 
 /**
@@ -36,14 +38,24 @@ public class RatingbarFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_ratingbar, container, false);
 
-        mRatingBar.findViewById(R.id.ratingBar_settingFrag);
-        submitButton.findViewById(R.id.rate_Button_settting);
-        rateTextView.findViewById(R.id.rating_TextView_settingFrag);
+        mRatingBar = view.findViewById(R.id.ratingBar_settingFrag);
+        submitButton = view.findViewById(R.id.submitRateButton_settingFrag);
+        rateTextView = view.findViewById(R.id.rating_TextView_settingFrag);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rateTextView.setText("Your rating is " + mRatingBar.getRating());
+                try {
+                    Thread.sleep(1000);
+                    onDestroy();
+                    Intent goBackToSetting = new Intent(getActivity(), MainActivity.class);
+                    startActivity(goBackToSetting);
+                    onDestroy();
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
